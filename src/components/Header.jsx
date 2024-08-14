@@ -1,60 +1,49 @@
 import React from "react";
-import { LOGO_URL } from "../utils/constants";
+import appLogo from '../assets/appLogo.png';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faPhone,faAddressCard,faUser, faCartShopping  } from '@fortawesome/free-solid-svg-icons';
-
+import { faBagShopping, faPhone, faAddressCard, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
-  // const [btnNameReact, setBtnNameReact] = useState("LogIn");
-
   return (
-    <div className="flex bg-[#f2eeee] mb-2 shadow-xl items-center p-2 ">
-      <div className="w-32 ml-3 cursor-pointer">
+    <div className="flex bg-[#FFFFFF] mb-1 shadow-xl items-center p-1">
+      <div className="w-32 ml-7 cursor-pointer m-4">
         <Link to="/home">
-          <img src={LOGO_URL} alt="Logo" />
+          <img src={appLogo} alt="Logo" />
         </Link>
       </div>
-      <div className="nav-items flex-1 mx-20">
-        <ul className="flex justify-end space-x-20 font-semibold text-2xl">
+      <div className="nav-items flex-1 mx-5">
+        <ul className="flex justify-end space-x-16 font-medium text-lg mr-6">
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
-          <FontAwesomeIcon icon={faBagShopping} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faBagShopping} className="cursor-pointer" />
             <Link to="/grocery" className="flex items-center">
               <span>Grocery</span>
             </Link>
           </li>
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
-          <FontAwesomeIcon icon={faAddressCard} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faAddressCard} className="cursor-pointer" />
             <Link to="/about" className="flex items-center">
               <span>About</span>
             </Link>
           </li>
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
-          <FontAwesomeIcon icon={faPhone} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faPhone} className="cursor-pointer" />
             <Link to="/contact" className="flex items-center">
               <span>Contact</span>
             </Link>
           </li>
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
-          <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faUser} className="cursor-pointer" />
             <Link to="/cart" className="flex items-center">
               <span>Sign in</span>
             </Link>
           </li>
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
-          <FontAwesomeIcon icon={faCartShopping} className="cursor-pointer" />
+            <FontAwesomeIcon icon={faCartShopping} className="cursor-pointer" />
             <Link to="/cart" className="flex items-center">
               <span>Cart</span>
             </Link>
           </li>
-          {/* <button
-            className="bg-[#F66E1B] text-white py-2 px-4  rounded hover:bg-[#d5590d]"
-            onClick={() => {
-              setBtnNameReact(btnNameReact === "LogIn" ? "LogOut" : "LogIn");
-            }}
-          >
-            {btnNameReact}
-          </button> */}
         </ul>
       </div>
     </div>

@@ -33,12 +33,12 @@ const Body = () => {
   return BodyData.length === 0 ? (
     <ShimmerUi />
   ) : (
-    <div className="bg-[#f7f1f1ed]">
+    <div className="bg-[#f7f1f1ed] shadow-2xl">
       <div className="flex items-center bg-slate-200 mb-5 p-4 space-x-4 justify-center">
         {/* Search Button */}
         <input
           type="text"
-          className="w-[800px] py-4 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-[500px] py-2 px-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Search for Restaurants"
           value={searchText}
           onChange={handleSearchChange}
