@@ -26,51 +26,54 @@ const RestaurantsCard = () => {
   const MENU7 = menuInfo?.[8]?.card?.card?.itemCards || [];
 
   return (
-    <div>
-      <div className="flex justify-center">
-        <div className="">
+    <div className="flex justify-center mx-4 lg:mx-32">
+      <div className="w-full lg:w-3/4">
+        <div className="font-bold text-2xl my-7">
           <h2>{cardInfo?.name || "Name not available"}</h2>
         </div>
-        <div className="restroInfo">
-          <h4>
-            <RatingLogo/>
-            {cardInfo?.avgRating || "No rating"} (
-            {cardInfo?.totalRatingsString || "No ratings"}) &#9679;{" "}
-            {cardInfo?.costForTwoMessage || "Cost information not available"}
-          </h4>
-        </div>
-        <div className="restroCuisines">
-          <ul>
-            {cardInfo?.cuisines?.map((cuisine, index, array) => (
-              <React.Fragment key={index}>
-                <b
-                  style={{
-                    color: "#FF5200",
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                  }}
-                >
-                  {cuisine}
-                </b>
-                {index < array.length - 1 && (
-                  <span style={{ color: "#FF5200" }}>, </span>
-                )}
-              </React.Fragment>
-            ))}
-          </ul>
-        </div>
-        <div className="restroAddress">
-          <ul>
-            Outlet &nbsp;{" "}
-            {cardInfo?.areaName || "Area information not available"}
-          </ul>
-        </div>
-        <div className="restroDetails">
-          <ul>{cardInfo?.sla?.slaString || "SLA information not available"}</ul>
-          <p>{cardInfo?.feeDetails?.message || "Fee details not available"}</p>
+        <div className="border border-gray-300 rounded-3xl px-6 py-6">
+          <div className="flex flex-col space-y-1">
+            <div className="flex items-center">
+              <RatingLogo />
+              <h4 className="ml-1">
+                <div className="flex">
+                  <div className="font-bold mr-1 font-lg">{cardInfo?.avgRating || "No rating"}</div>
+                  <div className="font-bold mr-1 font-lg">({cardInfo?.totalRatingsString || "No ratings"}) •</div>
+                  <div className="font-bold mr-1 font-lg">{cardInfo?.costForTwoMessage ||"Cost information not available"}</div>
+                </div>
+              </h4>
+            </div>
+            <div className="restroCuisines">
+              <ul className="flex space-x-1">
+                {cardInfo?.cuisines?.map((cuisine, index, array) => (
+                  <React.Fragment key={index}>
+                    <b className="text-orange-500 underline cursor-pointer">
+                      {cuisine}
+                    </b>
+                    {index < array.length - 1 && (
+                      <span className="text-orange-500">, </span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </ul>
+            </div>
+            <div className="restroAddress">
+              <ul>
+                Outlet &nbsp;{" "}
+                {cardInfo?.areaName || "Area information not available"}
+              </ul>
+            </div>
+            <div className="restroDetails">
+              <ul>
+                {cardInfo?.sla?.slaString || "SLA information not available"}
+              </ul>
+              <p>
+                {cardInfo?.feeDetails?.message || "Fee details not available"}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
       {/* MENU 1 STARTS HERE */}
       {/* <div className="Menu_1">
         <h1>
