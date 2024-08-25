@@ -1,5 +1,5 @@
 import React from "react";
-import RestroCard, { RestroCardPromoted } from "./RestroCard";
+import RestroCard from "./RestroCard";
 import ShimmerUi from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
