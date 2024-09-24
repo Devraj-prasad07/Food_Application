@@ -3,8 +3,12 @@ import appLogo from '../assets/appLogo.png';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faPhone, faAddressCard, faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  // Subscribing to the store using Selectors.
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="flex bg-[#FFFFFF] mb-1 shadow-xl items-center p-1">
       <div className="w-32 ml-7 cursor-pointer m-4">
@@ -41,7 +45,7 @@ const Header = () => {
           <li className="flex items-center hover:text-[#F66E1B] space-x-2">
             <FontAwesomeIcon icon={faCartShopping} className="cursor-pointer" />
             <Link to="/cart" className="flex items-center">
-              <span>Cart</span>
+              <span>Cart {cartItems.length} </span>
             </Link>
           </li>
         </ul>

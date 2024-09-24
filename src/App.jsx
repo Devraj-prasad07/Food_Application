@@ -8,16 +8,20 @@ import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantsCard from "./components/RestaurantsMenu";
+import { Provider } from "react-redux";
+import appStore from "./redux/appStore";
 
 // Lazy load the Grocery component
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
